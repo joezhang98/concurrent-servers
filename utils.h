@@ -7,6 +7,10 @@
 #include <sys/socket.h>
 #include <sys/types.h>
 
+// Dies (exits with a failure status) after printing the given printf-like
+// message to stdout.
+void die(char* fmt, ...);
+
 // Dies (exits with a failure status) after printing the current perror status
 // prefixed with msg.
 void perror_die(char* msg);
