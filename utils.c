@@ -14,6 +14,15 @@
 
 #define N_BACKLOG 64
 
+void die(char* fmt, ...) {
+  va_list args;
+  va_start(args, fmt);
+  vfprintf(stderr, fmt, args);
+  va_end(args);
+  fprintf(stderr, "\n");
+  exit(EXIT_FAILURE);
+}
+
 void perror_die(char* msg) {
   perror(msg);
   exit(EXIT_FAILURE);
