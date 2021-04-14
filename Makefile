@@ -6,7 +6,8 @@ LDFLAGS = -lpthread -pthread
 
 EXECUTABLES = \
 				sequential-server \
-				threaded-server
+				threaded-server \
+				threadspammer
 
 all: $(EXECUTABLES)
 
@@ -14,6 +15,9 @@ sequential-server: utils.c sequential-server.c
 				$(CC) $(CCFLAGS) $^ -o $@ $(LDFLAGS)
 
 threaded-server: utils.c threaded-server.c
+				$(CC) $(CCFLAGS) $^ -o $@ $(LDFLAGS)
+
+threadspammer: threadspammer.c
 				$(CC) $(CCFLAGS) $^ -o $@ $(LDFLAGS)
 
 .PHONY: clean format
